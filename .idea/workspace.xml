@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48456541-9b6f-439d-8ccc-00dc554e3b91" name="Default Changelist" comment="4. gün">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="48456541-9b6f-439d-8ccc-00dc554e3b91" name="Default Changelist" comment="4. gün ödev 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abstractDemo/.project" beforeDir="false" afterPath="$PROJECT_DIR$/abstractDemo/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/.project" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +35,6 @@
     <property name="last_opened_file_path" value="$USER_HOME$/git/JavaCamp" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="14" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="interfaces.Main" />
-      <module name="javaCamp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="14" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -87,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620649191806</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4. gün ödev 1">
+      <created>1620659272665</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620659272665</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +106,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3. gün" />
     <MESSAGE value="4. gün" />
-    <option name="LAST_COMMIT_MESSAGE" value="4. gün" />
+    <MESSAGE value="4. gün ödev 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="4. gün ödev 1" />
   </component>
 </project>
