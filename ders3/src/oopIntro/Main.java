@@ -22,6 +22,8 @@ public class Main {
 		category2.setId(2);
 		category2.setName("Yiyecek");
 		
+	//deneme
+		
 		System.out.println(category1.getName());
 		System.out.println(category2.getName());
 
