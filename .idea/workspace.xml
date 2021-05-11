@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48456541-9b6f-439d-8ccc-00dc554e3b91" name="Default Changelist" comment="4. gün ödev 1">
+    <list default="true" id="48456541-9b6f-439d-8ccc-00dc554e3b91" name="Default Changelist" comment="4. gün ödev 2 mernis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abstractDemo/.project" beforeDir="false" afterPath="$PROJECT_DIR$/abstractDemo/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/.project" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1sK4XZ1YznGLWmzkHJspYP6knd1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,6 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/git/JavaCamp" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
@@ -88,7 +88,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620659272665</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="4. gün ödev 2 mernis">
+      <created>1620676581220</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620676581221</updated>
+    </task>
+    <task id="LOCAL-00007" summary="4. gün ödev 2 mernis">
+      <created>1620676658614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620676658614</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +121,11 @@
     <MESSAGE value="3. gün" />
     <MESSAGE value="4. gün" />
     <MESSAGE value="4. gün ödev 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="4. gün ödev 1" />
+    <MESSAGE value="4. gün ödev 2 mernis" />
+    <option name="LAST_COMMIT_MESSAGE" value="4. gün ödev 2 mernis" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
