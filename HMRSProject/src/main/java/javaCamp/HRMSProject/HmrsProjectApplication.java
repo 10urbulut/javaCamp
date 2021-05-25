@@ -1,5 +1,9 @@
 package javaCamp.HRMSProject;
 
+import javax.validation.Validation;
+import javax.validation.ValidatorFactory;
+import javax.xml.validation.Validator;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,12 +23,12 @@ public class HmrsProjectApplication {
 	
 	
 	@Bean
-    public Docket api() { //docket tüm apileri gezip dokumanteasyon haline getiriyor
+    public Docket api() { //docket tüm apileri gezip dokumantasyon haline getiriyor
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
           .apis(RequestHandlerSelectors.basePackage("javaCamp.HRMSProject"))              
           .build();  
         
 	}
-
+	
 }

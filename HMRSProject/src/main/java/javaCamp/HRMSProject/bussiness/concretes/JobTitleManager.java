@@ -6,23 +6,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javaCamp.HRMSProject.bussiness.abstracts.JobTitleService;
+import javaCamp.HRMSProject.core.utilities.results.DataResult;
+import javaCamp.HRMSProject.core.utilities.results.Result;
+import javaCamp.HRMSProject.core.utilities.results.SuccessDataResult;
+import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
 import javaCamp.HRMSProject.dataAccess.abstracts.JobTitleDao;
 import javaCamp.HRMSProject.entities.concretes.JobTitle;
 
 
 @Service
 public class JobTitleManager implements JobTitleService{
-	JobTitleDao jobtitleDao;
+	JobTitleDao jobTitleDao;
 
 	@Autowired
-	public JobTitleManager(JobTitleDao jobtitleDao) {
+	public JobTitleManager(JobTitleDao jobTitleDao) {
 		super();
-		this.jobtitleDao = jobtitleDao;
+		this.jobTitleDao = jobTitleDao;
 	}
 
 	@Override
-	public List<JobTitle> getAll() {
-		return this.jobtitleDao.findAll();
+	public DataResult<List<JobTitle>> getAll() {
+		return new SuccessDataResult<List<JobTitle>>( jobTitleDao.findAll());
+	}
+
+	@Override
+	public Result add(JobTitle jobTitle) {
+		jobTitleDao.save(jobTitle);
+		return new SuccessResult();
+	}
+
+	@Override
+	public Result delete(JobTitle jobTitle) {
+		jobTitleDao.delete(jobTitle);
+		return new SuccessResult();
+	}
+
+	@Override
+	public Result update(JobTitle jobTitle) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
