@@ -12,10 +12,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2//swagger ı başlatan anotasyon
-public class HmrsProjectApplication {
+public class HrmsProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HmrsProjectApplication.class, args);
+		SpringApplication.run(HrmsProjectApplication.class, args);
 	}
 	
 	
