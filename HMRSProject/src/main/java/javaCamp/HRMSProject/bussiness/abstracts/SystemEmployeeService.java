@@ -1,6 +1,9 @@
 package javaCamp.HRMSProject.bussiness.abstracts;
 
-public interface SystemEmployeeService {
+import javaCamp.HRMSProject.core.validations.identityValidation.ConfirmToEmployerService;
+
+
+public interface SystemEmployeeService extends ConfirmToEmployerService{
 	
 	
 

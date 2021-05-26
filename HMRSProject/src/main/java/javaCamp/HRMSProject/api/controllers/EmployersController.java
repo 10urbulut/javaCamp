@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javaCamp.HRMSProject.bussiness.abstracts.EmployerService;
 import javaCamp.HRMSProject.core.utilities.results.DataResult;
 import javaCamp.HRMSProject.core.utilities.results.Result;
-import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
 import javaCamp.HRMSProject.entities.concretes.Employer;
 
 @RestController
@@ -28,9 +27,8 @@ public class EmployersController {
 	
 	@PostMapping("/add")
 	public Result add(@RequestBody Employer employer) {
-	
-		employerService.add(employer);
-		return new SuccessResult("Ekleme başarılı");
+		
+		return employerService.add(employer);
 	}
 	
 	@GetMapping("/getall")

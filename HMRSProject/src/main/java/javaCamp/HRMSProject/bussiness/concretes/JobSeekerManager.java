@@ -13,24 +13,35 @@ import javaCamp.HRMSProject.core.utilities.results.ErrorResult;
 import javaCamp.HRMSProject.core.utilities.results.Result;
 import javaCamp.HRMSProject.core.utilities.results.SuccessDataResult;
 import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
+import javaCamp.HRMSProject.core.validations.identityValidation.EMailVerificationService;
+import javaCamp.HRMSProject.core.validations.identityValidation.IdentityCheckerService;
 import javaCamp.HRMSProject.dataAccess.abstracts.JobSeekerDao;
 import javaCamp.HRMSProject.entities.concretes.JobSeeker;
 
 
 @Service
-public class JobSeekerManager implements JobSeekerService{
+public class JobSeekerManager   implements JobSeekerService{
 	
 	private JobSeekerDao jobSeekerDao;
-	
+	private IdentityCheckerService identityCheckerService;
+	private EMailVerificationService eMailVerificationService;
+
+
 	@Autowired
-	public JobSeekerManager (JobSeekerDao jobSeekerDao ){
-		
+	public JobSeekerManager (JobSeekerDao jobSeekerDao,	
+			IdentityCheckerService identityCheckerService,
+			EMailVerificationService eMailVerificationService)
+	{
 		this.jobSeekerDao=jobSeekerDao;
-		
+		this.identityCheckerService=identityCheckerService;
+		this.eMailVerificationService = eMailVerificationService;
+	
 	}
 
 	@Override
 	public Result add(JobSeeker jobSeeker) {
+		
+		
 		if(!this.nullAndEmptyBlocker(jobSeeker)){
 			return new ErrorResult("Alanlar boş olamaz");
 		}
@@ -41,17 +52,28 @@ public class JobSeekerManager implements JobSeekerService{
 		else if (!checkIfNationalityIdExists(jobSeeker)) {
 			return new ErrorResult("Tc numarası zaten var");
 		}
-		else {
+		else if(!checkIfPasswordAgainControl(jobSeeker)) {
 			
-			
-			jobSeekerDao.save(jobSeeker);		
-			return new SuccessResult("Ürün eklendi");
-			
+			return new ErrorResult("Parolalar aynı değil");
 		}
 		
 		
-	
+		else if(!identityCheckerService.FakeMernisControl(jobSeeker.getNationalityId(), jobSeeker.getLastName())) {
+			
+			return new ErrorResult("Kimlik doğrulanamadı");
+		}
+		else if(!eMailVerificationService.mailVerificationSending(jobSeeker.getEMail())) {
+			return new ErrorResult("Mail doğrulanamadı");
+		}
 		
+		else {
+	
+			jobSeekerDao.save(jobSeeker);		
+			return new SuccessResult("Ürün eklendi");
+			
+		
+		}
+
 	}
 
 	@Override
@@ -82,7 +104,7 @@ public class JobSeekerManager implements JobSeekerService{
 				|| jobSeeker.getLastName().isEmpty() 
 				|| jobSeeker.getEMail().isEmpty() 
 				|| jobSeeker.getNationalityId().isEmpty() 
-				|| jobSeeker.getPassword().isEmpty())
+				|| jobSeeker.getPassword().isEmpty()|| jobSeeker.getBirthYear()<=1900)
 				
 		{
 			return false;
@@ -115,6 +137,16 @@ public class JobSeekerManager implements JobSeekerService{
 		 }
 		 
 		 return true;
+	  }
+	  
+	  boolean checkIfPasswordAgainControl(JobSeeker jobSeeker) {
+		  
+		  if(!jobSeeker.getPassword().contains(jobSeeker.getPasswordAgain())) {
+			 
+			  return false;
+		  }
+		  
+		  return true;
 	  }
 	  
 	  
