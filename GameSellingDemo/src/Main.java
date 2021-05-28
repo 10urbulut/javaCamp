@@ -13,13 +13,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		
+		
+		
 		//Database simulation
 		Customer customer1 = new Customer();
 		customer1.setId(1);
 		customer1.setFirstName("Onur");
 		customer1.setLastName("Bulut");
 		customer1.setBirthYear(1993);
-		customer1.setCitizenId("30578066578");//fake
+		customer1.setCitizenId("32595422369");//fake
 		
 		Customer customer2 = new Customer();
 		customer2.setId(2);
@@ -38,6 +41,9 @@ public class Main {
 		System.out.println("\n---------- Customer CRUD section ----------\n");
 		//Customer CRUD simulation
 		CustomerManager customerManager = new CustomerManager(new CustomerDal());
+		
+		System.out.println(customerManager.checkForIdentity(customer1));
+		
 		customerManager.add(customer1);
 		customerManager.update(customer2);
 		customerManager.delete(customer3);
