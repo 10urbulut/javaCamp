@@ -26,7 +26,7 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 
 	@Override
 	public DataResult<List<JobAdvertisement>> getByStatusJobAdvertisements(boolean status) {
-		
+		status = true;
 		return new SuccessDataResult<List<JobAdvertisement>>(
 			 this.jobAdvertisementDao.findByStatus(status));
 	}
@@ -39,7 +39,7 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 
 	@Override
 	public DataResult<List<JobAdvertisement>> findByStatusAndPublicationDate(boolean status, Date date) {
-		// TODO Auto-generated method stub
+		status = true;
 		return new SuccessDataResult<List<JobAdvertisement>>(
 				this.jobAdvertisementDao.findByStatusAndPublicationDate(status,date));
 	}
