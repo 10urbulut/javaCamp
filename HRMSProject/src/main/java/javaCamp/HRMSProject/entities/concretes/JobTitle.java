@@ -2,6 +2,7 @@ package javaCamp.HRMSProject.entities.concretes;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class JobTitle {
 	@Column(name="job_name")
 	private String jobName;
 	
-	@OneToMany(mappedBy ="jobTitle")
+	@OneToMany(mappedBy ="jobTitle",cascade = CascadeType.ALL)
 	private List<JobAdvertisement> jobAdvertisements;
 
 

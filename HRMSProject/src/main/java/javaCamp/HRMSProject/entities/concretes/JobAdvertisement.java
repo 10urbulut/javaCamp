@@ -5,6 +5,7 @@ package javaCamp.HRMSProject.entities.concretes;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -59,7 +60,7 @@ public class JobAdvertisement {
 	@JoinColumn(name="user_id")
 	private Employer employer;
 
-	
+	//cascade = CascadeType.ALL
 	@ManyToOne()
 	@JoinColumn(name="city_id")
 	private City city;

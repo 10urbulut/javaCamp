@@ -2,6 +2,7 @@ package javaCamp.HRMSProject.entities.concretes;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -31,6 +32,6 @@ public class City {
 	@Column(name="city_name")
 	private String cityName;
 
-	@OneToMany(mappedBy = "city")
+	@OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
 	private List<JobAdvertisement> jobAdvertisements;
 }

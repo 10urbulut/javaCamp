@@ -2,6 +2,7 @@ package javaCamp.HRMSProject.entities.concretes;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -39,7 +40,7 @@ public class Employer extends User{
 	@Column(name = "phone_number")
 	private String phoneNumber;
 	
-	@OneToMany(mappedBy = "employer")
+	@OneToMany(mappedBy = "employer",cascade = CascadeType.ALL)
 	private List<JobAdvertisement> jobAdvertisements;
 	
 

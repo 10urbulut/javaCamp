@@ -46,7 +46,7 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 
 	@Override
 	public DataResult<List<JobAdvertisement>> findByEmployer_CompanyNameAndStatus(String companyName, boolean status) {
-		// TODO Auto-generated method stub
+	
 		return new SuccessDataResult<List<JobAdvertisement>>(
 				this.jobAdvertisementDao.findByEmployer_CompanyNameAndStatus(companyName, status));
 	}
