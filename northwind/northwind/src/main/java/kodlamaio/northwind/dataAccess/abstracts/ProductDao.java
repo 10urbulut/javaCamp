@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import kodlamaio.northwind.entities.concretes.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductDao extends JpaRepository<Product, Integer>{//integer id' yi temsil ediyor
 	
@@ -26,6 +27,12 @@ public interface ProductDao extends JpaRepository<Product, Integer>{//integer id
 	 // veri tabanı tablosunu unuta sanki product entitysi gibi yaz
 	 @Query("From Product where productName = : productName and categoryId = : categoryId")
 	 List<Product> getByNameAndCategory(String productName, int categoryId);
+	 
+	 @Query("Select new  kodlamaio.northwind.entities.dtos.ProductWithCategoryDto"
+	 		+ "(p.id, p.productName,c.categoryName)"
+	 		+ " From Category c Inner Join c.products p")
+	 List<ProductWithCategoryDto> getProductWithCategoryDetails();
+	 
 	 
 	 
 

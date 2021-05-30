@@ -25,7 +25,8 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	}
 
 	@Override
-	public DataResult<List<JobAdvertisement>> getByStatusJobAdvertisements(boolean status) {
+	public DataResult<List<JobAdvertisement>> getByStatus(boolean status) {
+		
 		status = true;
 		return new SuccessDataResult<List<JobAdvertisement>>(
 			 this.jobAdvertisementDao.findByStatus(status));

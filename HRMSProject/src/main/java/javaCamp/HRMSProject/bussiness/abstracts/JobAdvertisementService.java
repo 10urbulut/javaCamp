@@ -11,7 +11,7 @@ import javaCamp.HRMSProject.entities.concretes.JobAdvertisement;
 
 public interface JobAdvertisementService {
 
-    DataResult<List<JobAdvertisement>> getByStatusJobAdvertisements(boolean status);
+    DataResult<List<JobAdvertisement>> getByStatus(boolean status);
 
     Result add(JobAdvertisement jobAdvertisement);
     Result update(JobAdvertisement jobAdvertisement);

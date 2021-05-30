@@ -5,7 +5,6 @@ package javaCamp.HRMSProject.entities.concretes;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

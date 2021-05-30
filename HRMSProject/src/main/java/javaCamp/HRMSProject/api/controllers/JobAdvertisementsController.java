@@ -25,10 +25,11 @@ public class JobAdvertisementsController {
 	this.jobAdvertisementService = jobAdvertisementService;
  	}
 
-			@GetMapping("/getByStatusJobAdvertisements")
-			public DataResult<List<JobAdvertisement>> getByStatusJobAdvertisements(
-	 @RequestParam boolean status){
-return this.jobAdvertisementService.getByStatusJobAdvertisements(status);
+			@GetMapping("/getByStatusTrue")
+			public DataResult<List<JobAdvertisement>> getByStatus(
+	   ){
+				
+return this.jobAdvertisementService.getByStatus(true);
 
 
 			}
@@ -39,7 +40,7 @@ return this.jobAdvertisementService.getByStatusJobAdvertisements(status);
 							
 				}
 				
-				@GetMapping("/findByStatusOrderByPublicationDateAsc")
+				@GetMapping("/findByStatusAndPublicationDate")
 				  public DataResult<List<JobAdvertisement>> findByStatusOrderByPublicationDateAsc(
 						  @RequestParam boolean status, Date date){
 					  
