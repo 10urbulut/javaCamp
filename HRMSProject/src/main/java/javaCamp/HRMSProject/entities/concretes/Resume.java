@@ -54,10 +54,10 @@ public class Resume  {
 	@JoinColumn(name="education_information_id")
 	private EducationInformation educationInformation;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="job_information_id")
 	private JobInformation jobInformation;
 	
-	
+
 	
 }
