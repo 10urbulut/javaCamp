@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,12 +23,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","resumes"})
 @Entity
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="education_informations")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","resumes"})
+
 public class EducationInformation  {
 
 	@Id
@@ -45,9 +49,9 @@ public class EducationInformation  {
 	@Column(name="education_status")
 	private boolean educationStatus;
 	
-	
-	
-	@OneToMany(mappedBy = "educationInformation",cascade = CascadeType.ALL)
+
+	@OneToMany()
+	@JoinColumn(name = "resume_id")
 	private List<Resume> resumes;
 
 }

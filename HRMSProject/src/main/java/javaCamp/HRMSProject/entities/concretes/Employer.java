@@ -41,7 +41,7 @@ public class Employer extends User{
 	private String phoneNumber;
 	
 	@OneToMany(mappedBy = "employer",cascade = CascadeType.ALL)
-	private List<JobAdvertisement> jobAdvertisements;
+	private List<JobAdvertisement>   jobAdvertisements;
 	
 
 	

@@ -12,7 +12,7 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement, Int
 	List<JobAdvertisement> findByStatus(boolean status);
 	List<JobAdvertisement> findByStatusAndPublicationDate(boolean status, Date date);
 	List<JobAdvertisement> findByEmployer_CompanyNameAndStatus(String companyName,boolean status );
-
+	
 	
 }
 

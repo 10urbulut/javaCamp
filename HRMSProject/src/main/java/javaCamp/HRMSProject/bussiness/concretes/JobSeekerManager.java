@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 
 import javaCamp.HRMSProject.bussiness.abstracts.JobSeekerService;
+import javaCamp.HRMSProject.bussiness.validations.IdentityCheckService;
 import javaCamp.HRMSProject.core.utilities.results.DataResult;
 import javaCamp.HRMSProject.core.utilities.results.ErrorResult;
 import javaCamp.HRMSProject.core.utilities.results.Result;
 import javaCamp.HRMSProject.core.utilities.results.SuccessDataResult;
 import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
 import javaCamp.HRMSProject.core.validations.identityValidation.EMailVerificationService;
-import javaCamp.HRMSProject.core.validations.identityValidation.IdentityCheckerService;
 import javaCamp.HRMSProject.dataAccess.abstracts.JobSeekerDao;
 import javaCamp.HRMSProject.entities.concretes.JobSeeker;
 
@@ -23,13 +23,13 @@ import javaCamp.HRMSProject.entities.concretes.JobSeeker;
 public class JobSeekerManager   implements JobSeekerService{
 	
 	private JobSeekerDao jobSeekerDao;
-	private IdentityCheckerService identityCheckerService;
+	private IdentityCheckService identityCheckerService;
 	private EMailVerificationService eMailVerificationService;
 
 
 	@Autowired
 	public JobSeekerManager (JobSeekerDao jobSeekerDao,	
-			IdentityCheckerService identityCheckerService,
+			IdentityCheckService identityCheckerService,
 			EMailVerificationService eMailVerificationService)
 	{
 		this.jobSeekerDao=jobSeekerDao;
@@ -58,7 +58,7 @@ public class JobSeekerManager   implements JobSeekerService{
 		}
 		
 		
-		else if(!identityCheckerService.FakeMernisControl(jobSeeker.getNationalityId(), jobSeeker.getLastName())) {
+		else if(identityCheckerService.checkIfRealPerson(jobSeeker)) {
 			
 			return new ErrorResult("Kimlik doğrulanamadı");
 		}

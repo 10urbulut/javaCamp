@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,15 +19,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","resumes"})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "job_informations")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","resumes"})
 
+@EqualsAndHashCode(callSuper =false )
 public class JobInformation {
 
 	@Id
@@ -47,7 +52,8 @@ public class JobInformation {
 	@Column(name="job_position")
 	private String jobPosition;
 	
-	@OneToMany(mappedBy = "jobInformation",cascade = CascadeType.ALL)
+	@OneToMany()
+	@JoinColumn(name = "resume_id")
 	private List<Resume> resumes;
-	
+
 }
