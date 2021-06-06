@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>javaCamp</groupId>
-	<artifactId>HMRSProject</artifactId>
+	<artifactId>HRMSProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HMRSProject</name>
 	<description>Demo project for Spring Boot</description>

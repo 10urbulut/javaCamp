@@ -14,7 +14,6 @@ public class CityManager implements CityService{
 	public CityManager(CityDao cityDao) {
 		super();
 		this.cityDao = cityDao;
-	}
-	
+	}	
 
 }
