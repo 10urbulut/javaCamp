@@ -1,9 +1,16 @@
 package javaCamp.HRMSProject.entities.concretes;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +19,7 @@ import lombok.NoArgsConstructor;
 
 
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","resumes"})
 @Entity
 @PrimaryKeyJoinColumn(name="user_id")
 @AllArgsConstructor
@@ -37,4 +45,7 @@ public class JobSeeker extends User {
 	private int birthYear;
 
 
+	@JsonIgnore
+	@OneToMany(mappedBy = "jobSeeker",cascade = CascadeType.ALL)
+	private List<Resume> resumes;
 }

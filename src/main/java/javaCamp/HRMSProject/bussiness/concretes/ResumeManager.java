@@ -11,7 +11,6 @@ import javaCamp.HRMSProject.core.utilities.results.Result;
 import javaCamp.HRMSProject.core.utilities.results.SuccessDataResult;
 import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
 import javaCamp.HRMSProject.dataAccess.abstracts.ResumeDao;
-import javaCamp.HRMSProject.entities.concretes.EducationInformation;
 import javaCamp.HRMSProject.entities.concretes.Resume;
 
 @Service

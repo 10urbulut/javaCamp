@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -51,8 +52,9 @@ public class JobInformation {
 	@Column(name="job_position")
 	private String jobPosition;
 	
+	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "resume_id")
+	@JoinColumn(name = "reseume_id")
 	private Resume resume;
 
 }

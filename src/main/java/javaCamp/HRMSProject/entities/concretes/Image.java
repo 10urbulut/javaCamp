@@ -39,7 +39,7 @@ public class Image {
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "resume_id")
-    private Resume resume;
+	private Resume resume;
     
     
 }

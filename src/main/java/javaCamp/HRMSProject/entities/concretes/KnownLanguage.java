@@ -1,10 +1,13 @@
 package javaCamp.HRMSProject.entities.concretes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -28,5 +31,9 @@ public class KnownLanguage {
 	
 	@Column(name="language_level")
 	private int languageLevel;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "resume_id")
+	private Resume resume;
 	
 }
