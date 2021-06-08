@@ -1,7 +1,7 @@
 package javaCamp.HRMSProject.entities.concretes;
 
 import java.sql.Date;
-import java.util.List;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,9 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -23,7 +22,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","resumes"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","resume"})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -45,15 +44,15 @@ public class JobInformation {
 	
 	@Column(name="job_departure_date")
 	private Date jobDepartureDate;
-	
+		
 	@Column(name="work_status")
 	private boolean workStatus;
 	
 	@Column(name="job_position")
 	private String jobPosition;
 	
-	@OneToMany()
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "resume_id")
-	private List<Resume> resumes;
+	private Resume resume;
 
 }

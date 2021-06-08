@@ -9,5 +9,6 @@ import javaCamp.HRMSProject.entities.concretes.EducationInformation;
 public interface EducationInformationService {
 	DataResult<List<EducationInformation>> getAll();
 	Result add(EducationInformation educationInformation);
+	DataResult<List<EducationInformation>> findAllByResumeIdOrderByGraduationDateDesc(int resumeId);
 
 }

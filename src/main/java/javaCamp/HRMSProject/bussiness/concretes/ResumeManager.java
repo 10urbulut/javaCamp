@@ -11,8 +11,8 @@ import javaCamp.HRMSProject.core.utilities.results.Result;
 import javaCamp.HRMSProject.core.utilities.results.SuccessDataResult;
 import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
 import javaCamp.HRMSProject.dataAccess.abstracts.ResumeDao;
+import javaCamp.HRMSProject.entities.concretes.EducationInformation;
 import javaCamp.HRMSProject.entities.concretes.Resume;
-import javaCamp.HRMSProject.entities.concretes.Dtos.ResumeAllDto;
 
 @Service
 public class ResumeManager implements ResumeService{
@@ -36,6 +36,8 @@ public class ResumeManager implements ResumeService{
 		this.resumeDao.save(resume);
 		return new SuccessResult("Added");
 	}
+
+	
 
 
 }

@@ -9,6 +9,7 @@ import javaCamp.HRMSProject.bussiness.abstracts.JobInformationService;
 import javaCamp.HRMSProject.core.utilities.results.DataResult;
 import javaCamp.HRMSProject.core.utilities.results.Result;
 import javaCamp.HRMSProject.core.utilities.results.SuccessDataResult;
+import javaCamp.HRMSProject.core.utilities.results.SuccessResult;
 import javaCamp.HRMSProject.dataAccess.abstracts.JobInformationDao;
 import javaCamp.HRMSProject.entities.concretes.JobInformation;
 
@@ -31,8 +32,15 @@ public class JobInformationManager  implements JobInformationService{
 
 	@Override
 	public Result add(JobInformation jobInformation) {
-		// TODO Auto-generated method stub
-		return null;
+		this.jobInformationDao.save(jobInformation);
+		return new SuccessResult("Added");
+	}
+
+	
+	@Override
+	public DataResult<List<JobInformation>> getAllByResumes_ResumeIdOrderByJobDepartureDateDesc(int resumeId) {
+		return new SuccessDataResult<List<JobInformation>>(this.jobInformationDao.getAllByResume_ResumeIdOrderByJobDepartureDateDesc(resumeId),
+				"Listed");
 	}
 
 }

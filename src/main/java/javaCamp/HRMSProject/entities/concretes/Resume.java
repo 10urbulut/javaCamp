@@ -9,8 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,8 +39,6 @@ public class Resume  {
 	@Column(name="languageLevel")
 	private int languageLevel;
 	
-	@Column(name="image")
-	private String image;
 	
 	@Column(name="github_link")
 	private String githubLink;
@@ -55,13 +52,15 @@ public class Resume  {
 	@Column(name="cover_letter")
 	private String coverLetter;
 	
-	@ManyToOne
-	@JoinColumn(name = "education_information_id")
-	private EducationInformation educationInformation;
 	
-	@ManyToOne
-	@JoinColumn(name = "job_information_id")
-	private JobInformation jobInformation;
+	@OneToMany(mappedBy = "resume",cascade = CascadeType.ALL)
+	private List< JobInformation> jobInformations;
+	
+	@OneToMany(mappedBy = "resume",cascade = CascadeType.ALL)
+	private List<Image> images;
+	
+	@OneToMany(mappedBy = "resume",cascade = CascadeType.ALL)
+	private List<EducationInformation> educationInformations;
 	
 
 	
